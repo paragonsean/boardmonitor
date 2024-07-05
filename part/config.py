@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+"""
+import os
+
+from pathlib import Path
+import inspect
+
+import util.util as util
+import units.units as units
+
+
+f = inspect.getfile(inspect.currentframe())
+_FT3_PART_PARTS_RELPATH = 'parts'
+_FT3_PART_PARTS_ABSPATH = os.path.join(Path(f).resolve().parent, _FT3_PART_PARTS_RELPATH)
+
+_FT3_PART_PARTS_FILENAME_PREFIX = 'part'
+
+_FT3_PART_NAME_DEFAULT = 'Part' + ' ' + util._FT3_UTIL_NOW_FID()
+
+
+# PARAMETER DEFAULTS
+_FT3_PART_MINIMUM_STROKE_LENGTH_MM = 12.00 / units._FT3_UNITS_MM_TO_IN
+_FT3_PART_TOTAL_STROKE_LENGTH_MM   = 27.75 / units._FT3_UNITS_MM_TO_IN
+
+
+_FT3_PART_P1_P3_DISTANCE_MM = 7.50 / units._FT3_UNITS_MM_TO_IN
+_FT3_PART_P2_P3_DISTANCE_MM = 5.00 / units._FT3_UNITS_MM_TO_IN
+
+
+_FT3_PART_CSFS_MIN_POS_MM         = 12.00 / units._FT3_UNITS_MM_TO_IN
+_FT3_PART_CSFS_MIN_VEL_MM_PER_SEC = 28.00 / units._FT3_UNITS_MM_TO_IN
+
+
+_FT3_PART_INTENS_RISE_TIME_TARGET_PRESSURE_MPA = 2000.00 / units._FT3_UNITS_MPA_TO_PSI
+_FT3_PART_INTENS_PEAK_PRESSURE_SKIP_COUNTS     = 5
+
+
+_FT3_PART_SS_VAR_START_POS_USER_MM = 7.50 / units._FT3_UNITS_MM_TO_IN
+_FT3_PART_SS_VAR_END_POS_USER_MM   = 17.50 / units._FT3_UNITS_MM_TO_IN
+
+_FT3_PART_SS_VAR_START_POS_INIT_MM = 100.00
+_FT3_PART_SS_VAR_START_POS_BIAS_MM = 50.00
+_FT3_PART_SS_VAR_START_POS_GAIN    = 0.95
+
+_FT3_PART_SS_VAR_END_POS_BIAS_MM   = 120.00
